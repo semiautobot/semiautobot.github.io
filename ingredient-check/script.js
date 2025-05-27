@@ -117,4 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners
     checkButton.addEventListener('click', highlightDifferences);
     clearButton.addEventListener('click', clearAll);
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'light';
+    }
+
+    themeToggle.addEventListener('change', () => {
+        const newTheme = themeToggle.checked ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 }); 

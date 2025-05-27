@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f8e8ff 0%, #e8f4ff 100%);
+    background: linear-gradient(135deg, #0f110cff 0%, #612940ff 100%);
     min-height: 100vh;
     padding: 2rem;
     color: #6b6b6b;
@@ -20,7 +20,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #b8a8c7;
+    color: #9d6381ff;
     margin-bottom: 3rem;
     font-size: 2.5rem;
     font-weight: 700;
@@ -28,7 +28,7 @@ h1 {
 }
 
 h2 {
-    color: #b8a8c7;
+    color: #9d6381ff;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;

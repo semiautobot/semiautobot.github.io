@@ -1,0 +1,307 @@
+:root {
+    /* Dark theme (default) */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --box-bg: #1a1a1a;
+    --border-color: #333333;
+    --accent-color: #ff1493;
+    --accent-hover: #ff69b4;
+    --shadow-color: rgba(255, 20, 147, 0.1);
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --box-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --accent-color: #ff1493;
+    --accent-hover: #ff69b4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100vh;
+    padding: 2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+/* Theme Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--box-bg);
+    transition: .4s;
+    border-radius: 30px;
+    border: 2px solid var(--accent-color);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 2px;
+    background-color: var(--accent-color);
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.moon, .sun {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: .4s;
+    filter: grayscale(100%);
+}
+
+.moon {
+    right: 8px;
+    color: var(--text-color);
+}
+
+.sun {
+    left: 8px;
+    color: var(--text-color);
+}
+
+input:checked + .slider .moon {
+    opacity: 0;
+}
+
+input:checked + .slider .sun {
+    opacity: 1;
+}
+
+input:not(:checked) + .slider .moon {
+    opacity: 1;
+}
+
+input:not(:checked) + .slider .sun {
+    opacity: 0;
+}
+
+.theme-button {
+    background: var(--box-bg);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.theme-button:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.comparison-container {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.text-box {
+    flex: 1;
+    background: var(--box-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 
+                0 2px 4px -1px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px var(--shadow-color),
+                0 4px 6px -2px var(--shadow-color);
+}
+
+.editable-text {
+    width: 100%;
+    height: 500px;
+    padding: 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: all 0.2s ease;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--text-color);
+    background-color: var(--box-bg);
+}
+
+.editable-text:empty:before {
+    content: attr(placeholder);
+    color: #666666;
+}
+
+.editable-text:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--box-bg);
+    box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+.highlight {
+    background-color: var(--accent-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: var(--bg-color);
+    transition: background-color 0.2s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.check-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.check-button:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.check-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.clear-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.clear-button:hover {
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.clear-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Custom scrollbar */
+.editable-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.editable-text::-webkit-scrollbar-track {
+    background: var(--box-bg);
+    border-radius: 4px;
+}
+
+.editable-text::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.editable-text::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+.instructions {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: -1.5rem 0 2rem 0;
+} 

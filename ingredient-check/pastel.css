@@ -167,4 +167,12 @@ h2 {
 
 .editable-text::-webkit-scrollbar-thumb:hover {
     background: #c4a8e8;
+}
+
+.instructions {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #b8a8c7;
+    margin: -1.5rem 0 2rem 0;
 } 

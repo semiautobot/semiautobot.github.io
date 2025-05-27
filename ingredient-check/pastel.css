@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f8e8ff 0%, #e8f4ff 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    color: #6b6b6b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #b8a8c7;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: #b8a8c7;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.comparison-container {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.text-box {
+    flex: 1;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(155, 124, 182, 0.1), 
+                0 2px 4px -1px rgba(155, 124, 182, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(155, 124, 182, 0.1),
+                0 4px 6px -2px rgba(155, 124, 182, 0.05);
+}
+
+.editable-text {
+    width: 100%;
+    height: 500px;
+    padding: 1.25rem;
+    border: 2px solid #e8d4f4;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: all 0.2s ease;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #6b6b6b;
+    background-color: #fdfaff;
+}
+
+.editable-text:empty:before {
+    content: attr(placeholder);
+    color: #b8a8c7;
+}
+
+.editable-text:focus {
+    outline: none;
+    border-color: #c4a8e8;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(196, 168, 232, 0.15);
+}
+
+.highlight {
+    background-color: #f0e6ff;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #7b6b8b;
+    transition: background-color 0.2s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.check-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 2px solid #b8a8c7;
+    border-radius: 8px;
+    color: #9b7cb6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(155, 124, 182, 0.1);
+}
+
+.check-button:hover {
+    background-color: #f0e6ff;
+    border-color: #9b7cb6;
+    color: #7b6b8b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(155, 124, 182, 0.15);
+}
+
+.check-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(155, 124, 182, 0.1);
+}
+
+.clear-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 2px solid #d9a8a8;
+    border-radius: 8px;
+    color: #c78b8b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(199, 139, 139, 0.1);
+}
+
+.clear-button:hover {
+    background-color: #ffe6e6;
+    border-color: #c78b8b;
+    color: #b87b7b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(199, 139, 139, 0.15);
+}
+
+.clear-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(199, 139, 139, 0.1);
+}
+
+/* Custom scrollbar */
+.editable-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.editable-text::-webkit-scrollbar-track {
+    background: #f8e8ff;
+    border-radius: 4px;
+}
+
+.editable-text::-webkit-scrollbar-thumb {
+    background: #e8d4f4;
+    border-radius: 4px;
+}
+
+.editable-text::-webkit-scrollbar-thumb:hover {
+    background: #c4a8e8;
+} 

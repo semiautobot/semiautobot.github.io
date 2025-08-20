@@ -1,0 +1,154 @@
+/* Severance theme overrides */
+
+body.severance {
+  background: radial-gradient(1200px 800px at -20% -20%, #ffffff, transparent 60%), #f6f7f8;
+  color: #0b0f14;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.severance .header {
+  align-items: center;
+}
+
+body.severance .title h1 {
+  padding: 0;
+  color: #0b0f14;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: none;
+  border: none;
+  transform: none;
+}
+
+/* Minimal underline accent */
+body.severance .title h1::before,
+body.severance .title h1::after {
+  display: none;
+}
+
+body.severance .title h1 {
+  position: relative;
+}
+
+body.severance .title h1 span.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 6px;
+  background: #16a34a; /* Lumon green */
+  opacity: 0.8;
+}
+
+body.severance .subtitle {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #6b7280;
+}
+
+/* Buttons: flat, utilitarian */
+body.severance .btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0b0f14;
+  box-shadow: none;
+}
+
+body.severance .btn:hover {
+  border-color: #9ca3af;
+}
+
+body.severance .btn-primary {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #15803d;
+}
+
+/* Board: crisp grid, white paper with dot-matrix side strips */
+body.severance .board {
+  gap: 0;
+  background:
+    repeating-linear-gradient(to bottom, rgba(17,24,39,0.06) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(to right, rgba(17,24,39,0.06) 0 1px, transparent 1px 32px),
+    #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  padding: 14px 26px; /* space similar to Office Space perforations */
+  position: relative;
+}
+
+/* Perforation holes like Office Space, but on white paper */
+body.severance .board::before,
+body.severance .board::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  width: 12px;
+  background:
+    radial-gradient(circle at 6px 10px, #e5e7eb 3px, transparent 3px) 0 0/12px 28px repeat-y;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+body.severance .board::before {
+  left: 2px;
+}
+
+body.severance .board::after {
+  right: 2px;
+}
+
+/* Cells: thin borders form the grid */
+body.severance .cell {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+}
+
+body.severance .cell:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: none;
+}
+
+body.severance .cell .label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.18em;
+}
+
+/* Chips: subtle lumon-green phosphor glow */
+body.severance .cell .dot {
+  width: 46%;
+  height: 46%;
+  background: rgba(34, 197, 94, 0.28);
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.15),
+    0 0 18px rgba(34, 197, 94, 0.35);
+}
+
+/* FREE label in green */
+body.severance .cell.free .label {
+  color: #15803d;
+  letter-spacing: 0.8px;
+}
+
+/* Overlay: stark white */
+body.severance .overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body.severance .overlay-content {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+body.severance .overlay-content p {
+  color: #4b5563;
+}
+
+body.severance .celebrate {
+  filter: grayscale(1) brightness(0.6);
+} 

@@ -1,0 +1,145 @@
+/* Lumon Terminal theme */
+
+body.terminal {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+    repeating-linear-gradient(0deg, rgba(76, 201, 255, 0.045), rgba(76, 201, 255, 0.045) 1px, transparent 2px, transparent 3px);
+  color: #cde8ff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Header */
+body.terminal .header {
+  align-items: center;
+}
+
+body.terminal .title h1 {
+  padding: 0;
+  margin: 0;
+  color: #4cc9ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 8px rgba(76, 201, 255, 0.8),
+    0 0 16px rgba(76, 201, 255, 0.35);
+  border: none;
+}
+
+body.terminal .title h1::before,
+body.terminal .title h1::after {
+  display: none;
+}
+
+/* Blinking cursor */
+body.terminal .title h1 span.underline {
+  position: relative;
+  height: auto;
+  display: inline-block;
+  width: 0.6ch;
+  margin-left: 6px;
+  bottom: 0;
+  background: transparent;
+}
+
+body.terminal .title h1 span.underline::after {
+  content: "_";
+  color: #4cc9ff;
+  text-shadow:
+    0 0 8px rgba(76, 201, 255, 0.8),
+    0 0 16px rgba(76, 201, 255, 0.35);
+  animation: termblink 1.1s steps(1, end) infinite;
+}
+
+@keyframes termblink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Buttons */
+body.terminal .btn {
+  background: #070a12;
+  color: #4cc9ff;
+  border: 1px solid rgba(76, 201, 255, 0.5);
+  box-shadow: 0 0 10px rgba(76, 201, 255, 0.15) inset;
+}
+
+body.terminal .btn:hover {
+  border-color: rgba(76, 201, 255, 0.85);
+}
+
+body.terminal .btn-primary {
+  background: #0a1630;
+  color: #cde8ff;
+  border-color: rgba(76, 201, 255, 0.85);
+}
+
+/* Board */
+body.terminal .board {
+  background: #000000;
+  border: 1px solid rgba(76, 201, 255, 0.45);
+  border-radius: 6px;
+  box-shadow: 0 0 18px rgba(76, 201, 255, 0.2);
+}
+
+body.terminal .board::before,
+body.terminal .board::after {
+  display: none;
+}
+
+/* Cells */
+body.terminal .cell {
+  background: transparent;
+  border: 1px solid rgba(76, 201, 255, 0.25);
+  border-radius: 0;
+}
+
+body.terminal .cell:hover {
+  background: rgba(76, 201, 255, 0.05);
+  border-color: rgba(76, 201, 255, 0.5);
+  transform: none;
+}
+
+body.terminal .cell .label {
+  color: #cde8ff;
+  letter-spacing: 0.3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.15em;
+}
+
+/* Chips */
+body.terminal .cell .dot {
+  width: 48%;
+  height: 48%;
+  background: rgba(76, 201, 255, 0.28);
+  box-shadow:
+    0 0 0 2px rgba(76, 201, 255, 0.18),
+    0 0 22px rgba(76, 201, 255, 0.45);
+}
+
+body.terminal .cell.selected .dot {
+  opacity: 1;
+}
+
+body.terminal .cell.free .label {
+  color: #4cc9ff;
+}
+
+/* Overlay */
+body.terminal .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.terminal .overlay-content {
+  background: #070a12;
+  border: 1px solid rgba(76, 201, 255, 0.4);
+  color: #cde8ff;
+  box-shadow: 0 0 18px rgba(76, 201, 255, 0.2);
+}
+
+body.terminal .overlay-content p {
+  color: #a7d9ff;
+}
+
+body.terminal .celebrate {
+  filter: hue-rotate(100deg) saturate(1.2) brightness(0.9);
+} 
